@@ -24,8 +24,6 @@ The **mediationverse** extension provides a comprehensive suite of tools for R p
 - `/r-pkgdown` - Build website
 - `/r-readme` - Generate README
 - `/document-function` - Detailed roxygen2 headers
-- `/format-quarto-math` - Format math for vignettes
-- `/find-bibtex` - Find mediation citations
 
 ### 🔍 Quality & Review
 

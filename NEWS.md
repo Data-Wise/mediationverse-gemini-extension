@@ -14,6 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Development: `/r-s7`, `/r-fix`, `/r-lint`, `/r-docs`
   - Documentation: `/r-readme`, `/r-news`, `/r-pkgdown`, `/r-actions`, `/r-ci`
 - **Mediationverse specific commands**:
-  - `/document-function`, `/format-quarto-math`, `/find-bibtex`
-  - `/review-and-teach`, `/explain-simply`, `/generate-test-with-comments`
+  - `/document-function`
+  - `/review-and-teach`, `/generate-test-with-comments`
   - `/validate-inputs`, `/finalize-task`

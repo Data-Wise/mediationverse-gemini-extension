@@ -47,8 +47,6 @@ gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-ext
 | `/r-actions` | Setup GitHub Actions |
 | `/r-ci` | Check CI workflow status |
 | `/document-function` | Generate detailed roxygen2 headers |
-| `/format-quarto-math` | Format math for Quarto/RMarkdown |
-| `/find-bibtex` | Find BibTeX citations for mediation papers |
 
 ### 🔍 Code Quality & Review
 
@@ -64,7 +62,6 @@ gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-ext
 
 | Command | Description |
 |---------|-------------|
-| `/explain-simply` | Explain statistical concepts simply |
 | `/generate-test-with-comments` | Generate annotated testthat blocks |
 
 ## Usage Examples
@@ -79,12 +76,6 @@ gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-ext
 
 ```
 /r-check
-```
-
-### Find a citation
-
-```
-/find-bibtex MacKinnon 2004 confidence limits
 ```
 
 ## Related Packages
