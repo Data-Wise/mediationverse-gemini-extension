@@ -12,30 +12,51 @@ Thank you for your interest in contributing!
 ### Adding New Commands
 
 1. Create a new `.toml` file in `commands/`
-2. Follow the existing format:
+2. Follow the structure:
 
    ```toml
-   description = "Short description of the command"
+   description = "Short description"
    prompt = """
-   Your prompt here...
+   <PERSONA>
+   You are an expert in...
+   </PERSONA>
+
+   <OBJECTIVE>
+   What this command does.
+   </OBJECTIVE>
+
+   <INSTRUCTIONS>
+   1. Step one
+   2. Step two
+   </INSTRUCTIONS>
+
+   <OUTPUT>
+   Expected output format.
+   </OUTPUT>
    """
    ```
 
-3. Update `GEMINI.md` to list the new command
-4. Update `README.md` with the command description
+3. Assign an **orchestration pattern**:
+   - **Planning** — for complex tasks needing approval
+   - **Interactive** — for step-by-step guidance
+   - **Agentic** — for autonomous execution
+
+4. Update `GEMINI.md` with the new command
+5. Update `README.md` command table
+6. Update `NEWS.md` changelog
 
 ### Pull Requests
 
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch from `dev`
 3. Make your changes
-4. Submit a pull request
+4. Submit a pull request to `dev`
 
 ## Code Style
 
-- Use clear, descriptive command names with hyphens (e.g., `r-check`, `validate-inputs`)
-- Write prompts that are specific to R package development
-- Include context about the mediationverse ecosystem where relevant
+- Use clear, descriptive command names with hyphens (e.g., `r-check`)
+- Include `<PERSONA>`, `<OBJECTIVE>`, `<INSTRUCTIONS>`, `<OUTPUT>` sections
+- Default to S7 for OOP, checkmate for validation
 
 ## License
 

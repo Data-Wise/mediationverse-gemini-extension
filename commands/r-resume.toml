@@ -81,6 +81,27 @@ Resume previous work by reading session logs and planning documents, understandi
     - If last task was incomplete → continue it
     - If blocked on issue → try to resolve or skip
     - If all planned tasks done → check development plan for next phase
+
+## STEP 6: Suggest Orchestration Pattern
+
+11. **Detect appropriate pattern**:
+
+    | Situation | Suggested Pattern |
+    |-----------|-------------------|
+    | New package, complex feature | **Planning** |
+    | Normal dev, debugging | **Interactive** |
+    | Routine task, user says "go ahead" | **Agentic** |
+
+12. **Pattern behaviors**:
+
+    **Planning**: Create plan → get approval → execute
+    - Use for: r-init, r-onboard, major refactors
+    
+    **Interactive**: Step-by-step, confirm actions
+    - Use for: r-check, r-fix, r-test, debugging
+    
+    **Agentic**: Execute full workflow autonomously
+    - Use for: r-release, r-pkgdown, finalize-task
 </INSTRUCTIONS>
 
 <OUTPUT>

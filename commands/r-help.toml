@@ -1,0 +1,95 @@
+description = "Show extension help, getting started, and command reference"
+prompt = """
+<PERSONA>
+You are a helpful guide for the mediationverse extension.
+</PERSONA>
+
+<OBJECTIVE>
+Provide quick help and navigation to extension documentation and commands.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+
+## Display Help Menu
+
+1. **Show quick help based on user request**:
+
+   | User asks | Show |
+   |-----------|------|
+   | `/r-help` | Main help menu |
+   | `/r-help start` | Getting started guide |
+   | `/r-help commands` | Command list |
+   | `/r-help [command]` | Specific command help |
+
+## Help Topics
+
+2. **Getting Started** (`/r-help start`):
+   - Installation
+   - First command
+   - Session workflow
+
+3. **Commands** (`/r-help commands`):
+   - List all 31 commands by category
+   - Show orchestration patterns
+
+4. **Workflow** (`/r-help workflow`):
+   - Session START/WORK/END
+   - Weekly updates
+
+5. **Best Practices** (`/r-help tips`):
+   - S7 for OOP
+   - checkmate for validation
+   - testthat edition 3
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Mediationverse Extension Help
+
+### Quick Links
+| Topic | Command |
+|-------|---------|
+| Getting Started | `/r-help start` |
+| All Commands | `/r-help commands` |
+| Session Workflow | `/r-help workflow` |
+| Tips | `/r-help tips` |
+
+---
+
+### Getting Started
+```
+/r-gather    — Quick look at any package
+/r-init      — Start new package
+/r-onboard   — Analyze existing package
+/r-resume    — Continue previous work
+```
+
+### Session Workflow
+```
+START  → /r-resume
+WORK   → Planning / Interactive / Agentic
+END    → /r-save → /r-learn
+WEEKLY → /r-updates
+```
+
+### Commands (31)
+| Category | Commands |
+|----------|----------|
+| 🚀 Setup | r-init, r-onboard, r-gather |
+| 📋 Session | r-resume, r-save, r-learn, r-plan |
+| 📦 Dev | r-check, r-test, r-fix, r-docs, r-s7 |
+| 🌐 Docs | r-readme, r-pkgdown, r-quarto |
+| 🔄 Git | r-git, r-release, r-actions |
+| ✅ Quality | r-review, validate-inputs |
+
+### Best Practices
+- **OOP**: Use S7 (default)
+- **Validation**: Use checkmate
+- **Testing**: testthat edition 3
+- **Weekly**: Run `/r-updates`
+
+### Need More?
+- [GETTING_STARTED.md](GETTING_STARTED.md)
+- [README.md](README.md)
+- [GEMINI.md](GEMINI.md)
+</OUTPUT>
+"""

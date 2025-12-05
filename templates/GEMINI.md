@@ -44,7 +44,7 @@ package/
 When working on this package, use these commands:
 
 - `/r-check` - Run R CMD check
-- `/r-document` - Generate documentation
+- `/r-docs` - Generate documentation
 - `/r-test` - Run tests
 - `/validate-inputs` - Add checkmate validation
 
@@ -66,7 +66,7 @@ When working on this package, use these commands:
 
 1. Create function in `R/`
 2. Add roxygen2 documentation
-3. Run `/r-document`
+3. Run `/r-docs`
 4. Add tests in `tests/testthat/`
 5. Run `/r-check`
 
