@@ -11,7 +11,12 @@ Automatically fix common R CMD check issues, lint violations, and CRAN complianc
 <INSTRUCTIONS>
 1. **Identify issues**: First run or review recent R CMD check output if available.
 
-2. **Fix categories** (in order of priority):
+2. **Research Complex Issues**:
+   - If an issue is **NOT trivial** (e.g., simple typo, missing tag) and **NOT in your immediate knowledge base**:
+     - **Research it**: Use available tools or knowledge retrieval to understand the root cause.
+     - **Do not guess**: If unsure, explain the issue and suggest a path forward rather than applying a potentially incorrect fix.
+
+3. **Fix categories** (in order of priority):
 
    **CRITICAL - Fix immediately**:
    - Missing NAMESPACE entries

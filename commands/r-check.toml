@@ -45,7 +45,12 @@ Run `devtools::check()` with appropriate options on the current R package and pr
    - **WARNING**: Should be fixed, may cause rejection
    - **NOTE**: Review recommended, some are acceptable
 
-5. **Provide fixes**: For each issue:
+5. **Research Complex Issues**:
+   - If an issue is **NOT trivial** and **NOT in your immediate knowledge base**:
+     - **Research it**: Use available tools or knowledge retrieval to understand the root cause.
+     - **Do not guess**: If unsure, explain the issue and suggest a path forward rather than applying a potentially incorrect fix.
+
+6. **Provide fixes**: For each issue:
    - Explain WHY it's a problem
    - Provide the EXACT code or configuration fix
    - Reference CRAN policies if relevant
@@ -53,7 +58,7 @@ Run `devtools::check()` with appropriate options on the current R package and pr
 6. **Common issues to watch for**:
    - Missing `@importFrom` or `@import` tags
    - Undocumented parameters or return values
-   - Examples that don't run or take too long (use `\donttest{}`)
+   - Examples that don't run or take too long (use `\\donttest{}`)
    - Non-portable code paths
    - Missing LICENSE file
    - Namespace issues
