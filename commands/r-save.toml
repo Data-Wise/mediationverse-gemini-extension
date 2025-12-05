@@ -86,12 +86,24 @@ Before quitting, compress what was done, update all planning documents, and crea
    - Check `.Rbuildignore` contains `^planning$`
    - Add if missing
 
-## STEP 5: Final status report
+## STEP 5: Reflect and Capture Learnings
 
-8. **Display session summary**:
-   - What was accomplished
-   - Current state
-   - What to do next (for `/r-resume`)
+8. **Reflect on session**:
+   - What worked well?
+   - What was challenging?
+   - Any discoveries worth capturing?
+
+9. **Capture critical learnings** (via `/r-learn`):
+   - Breaking changes encountered
+   - New patterns discovered
+   - CRAN policy issues found
+
+## STEP 6: Final status report
+
+10. **Display session summary**:
+    - What was accomplished
+    - Current state
+    - What to do next (for `/r-resume`)
 </INSTRUCTIONS>
 
 <OUTPUT>

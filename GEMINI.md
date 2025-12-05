@@ -1,40 +1,95 @@
 # Mediationverse Extension
 
-The **mediationverse** extension provides a comprehensive suite of tools for R package development, combining general best practices with specialized support for mediation analysis.
+R package development toolkit with **agentic workflows** for efficient programming.
 
-## Core Workflows
+## Orchestration Patterns
+
+| Pattern | Trigger | Behavior |
+|---------|---------|----------|
+| **Planning** | Complex tasks, new package | Plan → approval → execute |
+| **Interactive** | Normal development | Step-by-step with user |
+| **Agentic** | "go ahead", routine | Full workflow autonomously |
+
+## Session Workflow
+
+```
+START  → /r-resume (load context)
+WORK   → Choose pattern above
+END    → /r-save → /r-learn
+WEEKLY → /r-updates
+```
+
+---
+
+## Commands (31)
 
 ### 🚀 Setup & Planning
 
-- `/r-init` - Initialize new package
-- `/r-onboard` - Analyze existing package
-- `/r-resume` - Resume work
-- `/r-save` - Save progress
+| Command | Purpose |
+|---------|---------|
+| `/r-init` | Initialize new package (planning-first) |
+| `/r-onboard` | Analyze existing package |
+| `/r-gather` | Quick package info (read-only) |
 
-### 🛠️ Development
+### 📋 Session Management
 
-- `/r-check` - Run `devtools::check()` (CRAN standards)
-- `/r-test` - Run `devtools::test()`
-- `/r-docs` - Run `devtools::document()`
-- `/r-s7` - S7 object-oriented programming
-- `/r-fix` - Auto-fix common issues
+| Command | Purpose |
+|---------|---------|
+| `/r-resume` | Resume previous work |
+| `/r-save` | Save progress, end session |
+| `/r-learn` | Add to LEARNINGS.md |
+| `/r-plan` | Update planning docs |
 
-### 📝 Documentation
+### 📦 Development
 
-- `/r-pkgdown` - Build website
-- `/r-readme` - Generate README
-- `/document-function` - Detailed roxygen2 headers
+| Command | Purpose |
+|---------|---------|
+| `/r-check` | Run devtools::check() |
+| `/r-test` | Create/run testthat tests |
+| `/r-fix` | Auto-fix check issues |
+| `/r-lint` | Tidyverse style linting |
+| `/r-docs` | Generate roxygen2 docs |
+| `/r-s7` | S7 class creation |
+| `/r-usethis` | Run usethis commands |
+| `/r-cran` | CRAN submission prep |
+| `/r-updates` | Check package updates |
 
-### 🔍 Quality & Review
+### 🌐 Website & Docs
 
-- `/r-lint` - Tidyverse linting
-- `/review-and-teach` - CRAN maintainer-style review
-- `/validate-inputs` - Refactor to use `checkmate`
-- `/finalize-task` - Generate commit messages
+| Command | Purpose |
+|---------|---------|
+| `/r-readme` | Generate README.md |
+| `/r-news` | Create/update NEWS.md |
+| `/r-pkgdown` | Build pkgdown site |
+| `/r-llm-docs` | Generate llms.txt for AI |
+| `/r-quarto` | Quarto vignette workflow |
+
+### 🔄 Git & CI/CD
+
+| Command | Purpose |
+|---------|---------|
+| `/r-git` | Branch management |
+| `/r-release` | Merge dev→main, tag, return |
+| `/r-actions` | Create GitHub Actions |
+| `/r-ci` | Monitor CI status |
+| `/finalize-task` | Generate commit message |
+
+### ✅ Quality & Review
+
+| Command | Purpose |
+|---------|---------|
+| `/r-review` | CRAN code review |
+| `/review-and-teach` | Review + explain |
+| `/document-function` | Single function docs |
+| `/validate-inputs` | Add checkmate validation |
+| `/generate-test-with-comments` | Test with explanations |
+
+---
 
 ## Best Practices
 
-- **Validation**: Use `checkmate` for defensive programming
-- **Testing**: Use `testthat` (edition 3)
-- **Documentation**: Use `roxygen2` and Quarto vignettes
-- **Style**: Follow tidyverse style guide
+- **OOP**: S7 (default for all packages)
+- **Validation**: checkmate
+- **Testing**: testthat (edition 3)
+- **Documentation**: roxygen2, Quarto
+- **Style**: tidyverse guide
