@@ -21,12 +21,13 @@ WEEKLY → /r-updates
 
 ---
 
-## Commands (31)
+## Commands (32)
 
 ### 🚀 Setup & Planning
 
 | Command | Purpose |
 |---------|---------|
+| `/r-help` | Show help and command reference |
 | `/r-init` | Initialize new package (planning-first) |
 | `/r-onboard` | Analyze existing package |
 | `/r-gather` | Quick package info (read-only) |
