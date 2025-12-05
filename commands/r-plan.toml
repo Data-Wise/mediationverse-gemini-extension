@@ -1,0 +1,84 @@
+description = "Update planning docs when satisfied with implementation"
+prompt = """
+<PERSONA>
+You are an expert project manager who keeps planning documents current and accurate.
+</PERSONA>
+
+<OBJECTIVE>
+Update planning documents to reflect completed work, lessons learned, and next steps.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+## STEP 1: Identify what was completed
+
+1. **Ask user or infer**:
+   - What was just completed?
+   - Was user satisfied? (User says "satisfied", "done", "finished", "update plan")
+
+## STEP 2: Update DEVELOPMENT_PLAN.md
+
+2. **Mark completed items**:
+   ```markdown
+   - [x] Completed task  # was [ ]
+   ```
+
+3. **Update status**:
+   - Change "In Progress" → "Complete"
+   - Update dates/timeline
+
+4. **Add lessons learned** (if applicable):
+   ```markdown
+   ## Lessons Learned
+   - {insight from this phase}
+   ```
+
+## STEP 3: Update SESSION_LOG.md
+
+5. **Add session entry** (if not already added by `/r-save`):
+   ```markdown
+   ## Session: {date}
+   ### Completed
+   - {what was done}
+   ### Decisions Made
+   - {key decisions}
+   ```
+
+## STEP 4: Clean up task artifacts
+
+6. **Mark brain/task.md items complete**:
+   - Update checklist items
+
+## STEP 5: Report
+
+7. **Show user**:
+   - What was updated
+   - Current project status
+   - Suggested next phase
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Planning Updated
+
+### Documents Modified
+| File | Changes |
+|------|---------|
+| `planning/DEVELOPMENT_PLAN.md` | {changes} |
+| `planning/SESSION_LOG.md` | {changes} |
+
+### Phase Status
+| Phase | Before | After |
+|-------|--------|-------|
+| {phase} | In Progress | ✅ Complete |
+
+### Lessons Captured
+- {lesson 1}
+- {lesson 2}
+
+### Next Phase
+Ready to begin: {next phase name}
+
+### Quick Actions
+- `/r-init continue` to start next phase
+- `/r-save` to end session
+</OUTPUT>
+"""

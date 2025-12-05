@@ -83,8 +83,33 @@ Build a pkgdown website for the R package, configure `_pkgdown.yml`, and trouble
    ```
 
 6. **GitHub Pages setup**:
-   - Build site with `pkgdown::build_site()`
-   - Or use GitHub Actions (see `/r-actions`)
+   ```r
+   # Recommended setup (creates workflow + configures repo)
+   usethis::use_pkgdown_github_pages()
+   ```
+   Or manually with `/r-actions`
+
+7. **LLM Documentation** (pkgdown >= 2.2.0):
+   ```r
+   # Generate AI-friendly docs
+   pkgdown::build_llm_docs()
+   ```
+   Creates `llms.txt` and `llms-full.txt` for LLM consumption.
+   See `/r-llm-docs` for details.
+
+8. **Accessibility**:
+   - pkgdown generates accessible HTML by default
+   - Ensure alt text on images
+   - Use semantic headings in vignettes
+
+9. **Bootstrap 5 theming**:
+   ```yaml
+   template:
+     bootstrap: 5
+     bootswatch: cosmo  # or: flatly, lux, darkly
+     bslib:
+       primary: "#0d6efd"
+   ```
 </INSTRUCTIONS>
 
 <OUTPUT>
