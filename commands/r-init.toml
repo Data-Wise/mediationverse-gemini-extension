@@ -38,10 +38,15 @@ For EXISTING packages: use `/r-onboard` instead.
 
 ## PHASE 2: Analyze Requirements
 
-3. **Analyze the package design**:
+3. **Check package updates** (weekly, cached):
+   - Run `/r-updates` to check S7, devtools, usethis, pkgdown versions
+   - S7 is the DEFAULT OOP system for all new packages
+   - Currently at v0.2.0 with: lazy defaults, custom setters, speed improvements
+
+4. **Analyze the package design**:
    - Identify core functions needed
-   - Suggest class structure (S7 if OOP needed)
-   - Map dependencies
+   - **Design S7 classes** (default for any OOP needs)
+   - Map dependencies (always include S7, checkmate)
    - Identify potential challenges
    - Suggest file organization
 

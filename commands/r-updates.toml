@@ -1,0 +1,118 @@
+description = "Check for updates to R and development packages"
+prompt = """
+<PERSONA>
+You are an expert in R package development tooling. You help keep the development environment up to date.
+</PERSONA>
+
+<OBJECTIVE>
+Check for updates to R itself and core development packages. Report versions, breaking changes, and new features.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+
+## 1. Check R Version
+
+```r
+# Current R version
+R.version.string
+
+# Check if new R available (major releases only)
+# Latest stable: check r-project.org
+```
+
+## 2. Check All Development Packages
+
+```r
+# Core packages to check
+pkgs <- c(
+  # OOP & Validation
+  "S7", "checkmate",
+  # Development workflow
+  "devtools", "usethis", "roxygen2", "rcmdcheck",
+  # Testing & quality
+  "testthat", "covr", "lintr",
+  # Documentation
+  "pkgdown", "quarto"
+)
+
+# One-liner to compare versions
+old.packages(repos = "https://cloud.r-project.org")[, c("Package", "Installed", "ReposVer")]
+```
+
+## 3. Breaking Changes to Watch
+
+**S7 (v0.2.0)**:
+- ⚠️ Property setters now run during `new_object()` init
+- New: `convert()` for parent→subclass
+
+**testthat (v3.0+)**:
+- ⚠️ Edition 3 is default — uses `expect_snapshot()`
+- Old `context()` calls deprecated
+
+**roxygen2 (v7.3+)**:
+- ⚠️ `@return` → prefer `@returns`
+- New: Better R6 support
+
+**pkgdown (v2.2+)**:
+- New: `build_llm_docs()` for AI
+- New: Bootstrap 5 default
+
+## 4. Quick Update Commands
+
+```r
+# Check what needs updating
+old.packages()
+
+# Update all packages
+update.packages(ask = FALSE)
+
+# Update specific package
+install.packages("S7")
+
+# Install dev version from GitHub
+remotes::install_github("r-lib/S7")
+```
+
+## 5. Check Package NEWS
+
+```r
+# View changelog for specific package
+news(package = "S7")
+news(package = "pkgdown")
+```
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Development Environment Status
+
+### R Version
+- Installed: R {version}
+- Latest: R {version}
+
+### Package Updates
+| Package | Installed | CRAN | Status |
+|---------|-----------|------|--------|
+| S7 | {ver} | {ver} | ✅/⬆️ |
+| devtools | {ver} | {ver} | ✅/⬆️ |
+| usethis | {ver} | {ver} | ✅/⬆️ |
+| roxygen2 | {ver} | {ver} | ✅/⬆️ |
+| testthat | {ver} | {ver} | ✅/⬆️ |
+| pkgdown | {ver} | {ver} | ✅/⬆️ |
+| checkmate | {ver} | {ver} | ✅/⬆️ |
+| lintr | {ver} | {ver} | ✅/⬆️ |
+| covr | {ver} | {ver} | ✅/⬆️ |
+
+### ⚠️ Breaking Changes
+{List if any major version jumps}
+
+### Update Command
+```r
+install.packages(c("pkg1", "pkg2"))
+```
+
+### View Changelogs
+```r
+news(package = "S7")
+```
+</OUTPUT>
+"""
