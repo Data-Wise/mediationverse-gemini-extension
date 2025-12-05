@@ -40,6 +40,7 @@ gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-ext
 | `/explain-simply` | Explain statistical concepts simply |
 | `/generate-test-with-comments` | Generate annotated testthat test blocks |
 | `/validate-inputs` | Refactor to use checkmate input validation |
+| `/finalize-task` | Summarize session and generate git commit message |
 
 ## Usage Examples
 

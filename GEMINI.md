@@ -23,5 +23,6 @@ The mediationverse extension provides specialized commands for R package develop
 - `/explain-simply` - Explain statistical concepts simply
 - `/generate-test-with-comments` - Generate testthat blocks with comments
 - `/validate-inputs` - Refactor to use checkmate validation
+- `/finalize-task` - Summarize session and generate git commit message
 
 When working on RMediation or mediationverse packages, prefer these commands for consistent workflow.

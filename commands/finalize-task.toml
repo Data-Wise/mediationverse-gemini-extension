@@ -1,0 +1,19 @@
+description = "Summarize session changes and generate git commit message"
+prompt = """
+You are helping finalize a development session on an R package.
+
+**Task**: Summarize the changes and prepare for commit.
+
+**Instructions**:
+1. **Summary**: Briefly summarize the changes made in this session (e.g., "Updated DESCRIPTION, fixed logo, and added input validation")
+
+2. **Git Commit**: Generate a conventional commit message:
+   - Format: `type(scope): description`
+   - Types: `feat` (new feature), `fix` (bug fix), `docs` (documentation), `style` (formatting), `refactor`, `test`, `chore`
+   - Example: `docs(readme): update badge links and add logo`
+
+3. **Git Push**: Provide the exact command to push:
+   - Example: `git push origin main`
+
+Output the summary, commit message in a code block, and push command.
+"""

@@ -24,3 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `/explain-simply` - Simple statistical explanations
   - `/generate-test-with-comments` - Generate annotated testthat blocks
   - `/validate-inputs` - Refactor to use checkmate validation
+  - `/finalize-task` - Summarize session and generate git commit message
