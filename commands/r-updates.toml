@@ -100,6 +100,27 @@ remotes::install_github("r-lib/S7")
 news(package = "S7")
 news(package = "pkgdown")
 ```
+
+## 7. Capture Critical Learnings
+
+**If you find useful or critical changes, save them!**
+
+After reviewing updates, identify changes that affect package development:
+- ⚠️ Breaking changes that require code updates
+- 🆕 New features that should be adopted
+- 📋 CRAN policy changes
+
+**Save to LEARNINGS.md using `/r-learn`**:
+- Be concise: "S7 v0.2.0: setters now run during init"
+- Include version number
+- Note if it affects existing code
+
+**Example learnings to capture**:
+```
+- S7 0.2.0: Property setters run during new_object() init
+- pkgdown 2.2.0: Use build_llm_docs() for AI-friendly docs
+- CRAN 2024: Prefer @returns over @return in roxygen2
+```
 </INSTRUCTIONS>
 
 <OUTPUT>
