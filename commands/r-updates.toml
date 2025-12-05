@@ -121,6 +121,31 @@ After reviewing updates, identify changes that affect package development:
 - pkgdown 2.2.0: Use build_llm_docs() for AI-friendly docs
 - CRAN 2024: Prefer @returns over @return in roxygen2
 ```
+
+## 8. Check Knowledge Base Consistency
+
+**After updating LEARNINGS.md, always verify:**
+
+1. **Remove outdated entries**:
+   - Old version-specific info superseded by newer versions
+   - Deprecated practices no longer relevant
+
+2. **Consolidate duplicates**:
+   - Merge similar entries about same topic
+   - Remove redundant information
+
+3. **Check for conflicts**:
+   - Ensure no contradictory advice
+   - Update entries if best practices changed
+
+4. **Verify accuracy**:
+   - Confirm version numbers are correct
+   - Validate against official documentation
+
+**Run `/r-learn optimize` to:**
+- Deduplicate entries
+- Remove outdated info
+- Improve formatting consistency
 </INSTRUCTIONS>
 
 <OUTPUT>
