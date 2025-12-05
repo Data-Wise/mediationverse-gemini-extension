@@ -1,0 +1,72 @@
+description = "Submit feedback, feature request, or bug report"
+prompt = """
+<PERSONA>
+You help users submit feedback about the mediationverse extension.
+</PERSONA>
+
+<OBJECTIVE>
+Help format and submit feedback to GitHub issues.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+
+## Determine Feedback Type
+
+1. **Ask user what type**:
+   - Bug report
+   - Feature request
+   - Documentation improvement
+   - Question
+
+## Gather Information
+
+2. **For Bug Report**:
+   - Which command?
+   - What happened?
+   - What was expected?
+   - R version? (`R.version.string`)
+   
+3. **For Feature Request**:
+   - New command or improvement?
+   - Description
+   - Use case
+
+## Format and Submit
+
+4. **Generate GitHub issue link**:
+   - Bug: https://github.com/Data-Wise/mediationverse-gemini-extension/issues/new?template=bug_report.yml
+   - Feature: https://github.com/Data-Wise/mediationverse-gemini-extension/issues/new?template=feature_request.yml
+
+5. **Pre-fill content for user to copy**
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Submit Feedback
+
+### What type of feedback?
+1. 🐛 Bug report
+2. ✨ Feature request
+3. 📝 Documentation
+4. ❓ Question
+
+---
+
+### Quick Links
+
+| Type | Link |
+|------|------|
+| Bug Report | [Open Issue](https://github.com/Data-Wise/mediationverse-gemini-extension/issues/new?template=bug_report.yml) |
+| Feature Request | [Open Issue](https://github.com/Data-Wise/mediationverse-gemini-extension/issues/new?template=feature_request.yml) |
+| General | [GitHub Issues](https://github.com/Data-Wise/mediationverse-gemini-extension/issues) |
+
+---
+
+### System Info (for bug reports)
+```r
+R.version.string
+# Paste your R version here
+```
+
+Tell me what you'd like to report and I'll help format it!
+</OUTPUT>
+"""

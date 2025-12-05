@@ -21,7 +21,7 @@ WEEKLY → /r-updates
 
 ---
 
-## Commands (32)
+## Commands (33)
 
 ### 🚀 Setup & Planning
 
@@ -31,6 +31,7 @@ WEEKLY → /r-updates
 | `/r-init` | Initialize new package (planning-first) |
 | `/r-onboard` | Analyze existing package |
 | `/r-gather` | Quick package info (read-only) |
+| `/r-feedback` | Submit bug report or feature request |
 
 ### 📋 Session Management
 
