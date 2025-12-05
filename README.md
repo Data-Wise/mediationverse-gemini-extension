@@ -21,15 +21,22 @@ gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-ext
 | **Interactive** | Normal development | Step-by-step with user |
 | **Agentic** | "go ahead", routine | Full workflow autonomously |
 
-## Commands (31)
+## Commands (33)
 
 ### 🚀 Setup & Planning
 
 | Command | Description |
 |---------|-------------|
+| `/r-help` | Show help and command reference |
 | `/r-init` | Initialize new package (planning-first) |
 | `/r-onboard` | Analyze existing package |
 | `/r-gather` | Quick package info (read-only) |
+| `/r-feedback` | Submit bug report or feature request |
+
+### 📋 Session Management
+
+| Command | Description |
+|---------|-------------|
 | `/r-resume` | Resume previous work |
 | `/r-save` | Save progress, end session |
 | `/r-learn` | Add to LEARNINGS.md |

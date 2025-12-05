@@ -128,6 +128,7 @@ Creates or updates your pkgdown site with proper configuration.
 
 | Task | Command |
 |------|---------|
+| Get help | `/r-help` |
 | Start session | `/r-resume` |
 | End session | `/r-save` |
 | Check package | `/r-check` |
@@ -137,6 +138,7 @@ Creates or updates your pkgdown site with proper configuration.
 | Build site | `/r-pkgdown` |
 | Release | `/r-release` |
 | Weekly updates | `/r-updates` |
+| Report bug | `/r-feedback` |
 
 ---
 
