@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Extension-purple)](https://github.com/google-gemini/gemini-cli)
 
-A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R package development, combining general best practices with specialized tools for the **mediationverse** ecosystem.
+A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R package development with **agentic workflows**.
 
 ## Installation
 
@@ -11,71 +11,79 @@ A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extens
 gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-extension
 ```
 
-## Commands
+## Orchestration Patterns
+
+| Pattern | Trigger | Behavior |
+|---------|---------|----------|
+| **Planning** | Complex tasks, new package | Plan → approval → execute |
+| **Interactive** | Normal development | Step-by-step with user |
+| **Agentic** | "go ahead", routine | Full workflow autonomously |
+
+## Commands (31)
 
 ### 🚀 Setup & Planning
 
 | Command | Description |
 |---------|-------------|
-| `/r-init` | Initialize a new package with development plan |
-| `/r-onboard` | Analyze and onboard an existing package |
-| `/r-resume` | Resume work from previous session logs |
-| `/r-save` | Save progress and update planning docs |
-| `/r-learn` | Update knowledge base |
-| `/r-usethis` | Run `usethis` setup commands |
-| `/r-git` | Manage Git branches and status |
+| `/r-init` | Initialize new package (planning-first) |
+| `/r-onboard` | Analyze existing package |
+| `/r-gather` | Quick package info (read-only) |
+| `/r-resume` | Resume previous work |
+| `/r-save` | Save progress, end session |
+| `/r-learn` | Add to LEARNINGS.md |
+| `/r-plan` | Update planning docs |
 
-### 🛠️ Development Workflow
-
-| Command | Description |
-|---------|-------------|
-| `/r-check` | Run `devtools::check()` with CRAN settings |
-| `/r-test` | Run `devtools::test()` |
-| `/r-build` | Full CRAN submission build workflow |
-| `/r-docs` | Run `devtools::document()` |
-| `/r-document` | Generate roxygen2 documentation (alias) |
-| `/r-s7` | Create S7 classes and methods |
-| `/r-fix` | Auto-fix common R CMD check issues |
-
-### 📝 Documentation & Website
+### 📦 Development
 
 | Command | Description |
 |---------|-------------|
-| `/r-readme` | Generate README with badges |
+| `/r-check` | Run `devtools::check()` |
+| `/r-test` | Create/run testthat tests |
+| `/r-fix` | Auto-fix check issues |
+| `/r-lint` | Tidyverse style linting |
+| `/r-docs` | Generate roxygen2 docs |
+| `/r-s7` | S7 class creation |
+| `/r-usethis` | Run usethis commands |
+| `/r-cran` | CRAN submission prep |
+| `/r-updates` | Check package updates |
+
+### 🌐 Website & Docs
+
+| Command | Description |
+|---------|-------------|
+| `/r-readme` | Generate README.md |
 | `/r-news` | Create/update NEWS.md |
-| `/r-pkgdown` | Build pkgdown website |
-| `/r-actions` | Setup GitHub Actions |
-| `/r-ci` | Check CI workflow status |
-| `/document-function` | Generate detailed roxygen2 headers |
+| `/r-pkgdown` | Build pkgdown site |
+| `/r-llm-docs` | Generate llms.txt for AI |
+| `/r-quarto` | Quarto vignette workflow |
 
-### 🔍 Code Quality & Review
-
-| Command | Description |
-|---------|-------------|
-| `/r-lint` | Lint code with tidyverse style |
-| `/r-review` | General code review |
-| `/review-and-teach` | CRAN maintainer-style review with teaching |
-| `/validate-inputs` | Refactor to use `checkmate` validation |
-| `/finalize-task` | Summarize session and generate commit message |
-
-### 🎓 Teaching & Explanation
+### 🔄 Git & CI/CD
 
 | Command | Description |
 |---------|-------------|
-| `/generate-test-with-comments` | Generate annotated testthat blocks |
+| `/r-git` | Branch management |
+| `/r-release` | Merge dev→main, tag, return |
+| `/r-actions` | Create GitHub Actions |
+| `/r-ci` | Monitor CI status |
+| `/finalize-task` | Generate commit message |
 
-## Usage Examples
+### ✅ Quality & Review
 
-### Start a new feature
+| Command | Description |
+|---------|-------------|
+| `/r-review` | CRAN code review |
+| `/review-and-teach` | Review + explain |
+| `/document-function` | Single function docs |
+| `/validate-inputs` | Add checkmate validation |
+| `/generate-test-with-comments` | Test with explanations |
+
+## Session Workflow
 
 ```
-/r-git create a new branch for feature-x
-```
-
-### Check your package
-
-```
-/r-check
+START  → /r-resume
+WORK   → Choose pattern above
+END    → /r-save → /r-learn
+WEEKLY → /r-updates
 ```
 
 ## Related Packages
