@@ -20,7 +20,27 @@ R.version.string
 # Latest stable: check r-project.org
 ```
 
-## 2. Check All Development Packages
+## 2. Check CRAN Policy Changes
+
+**Sources to monitor**:
+- Policy page: https://cran.r-project.org/web/packages/policies.html
+  - Check revision number (currently: $Revision: 6286 $)
+- R Journal "Changes on CRAN" articles
+- R-hub blog: https://blog.r-hub.io/
+
+**Recent 2024 policy changes**:
+- ⚠️ ROR identifiers encouraged for organizations (like ORCID)
+- ⚠️ Package names are now persistent (no renaming after acceptance)
+- ⚠️ `@returns` preferred over `@return` in roxygen2
+
+**Check policy revision**:
+```r
+# Download and check revision number
+policy <- readLines("https://cran.r-project.org/web/packages/policies.html")
+grep("Revision:", policy, value = TRUE)
+```
+
+## 3. Check All Development Packages
 
 ```r
 # Core packages to check
@@ -39,7 +59,7 @@ pkgs <- c(
 old.packages(repos = "https://cloud.r-project.org")[, c("Package", "Installed", "ReposVer")]
 ```
 
-## 3. Breaking Changes to Watch
+## 4. Breaking Changes to Watch
 
 **S7 (v0.2.0)**:
 - ⚠️ Property setters now run during `new_object()` init
@@ -57,7 +77,7 @@ old.packages(repos = "https://cloud.r-project.org")[, c("Package", "Installed", 
 - New: `build_llm_docs()` for AI
 - New: Bootstrap 5 default
 
-## 4. Quick Update Commands
+## 5. Quick Update Commands
 
 ```r
 # Check what needs updating
@@ -73,7 +93,7 @@ install.packages("S7")
 remotes::install_github("r-lib/S7")
 ```
 
-## 5. Check Package NEWS
+## 6. Check Package NEWS
 
 ```r
 # View changelog for specific package
@@ -88,6 +108,10 @@ news(package = "pkgdown")
 ### R Version
 - Installed: R {version}
 - Latest: R {version}
+
+### CRAN Policy
+- Revision: {$Revision: XXXX $}
+- Last checked: {date}
 
 ### Package Updates
 | Package | Installed | CRAN | Status |
