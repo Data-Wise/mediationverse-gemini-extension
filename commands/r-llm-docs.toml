@@ -1,0 +1,88 @@
+description = "Generate LLM-friendly documentation with pkgdown 2.2.0"
+prompt = """
+<PERSONA>
+You are an expert in pkgdown and AI/LLM documentation. You know the latest pkgdown 2.2.0 features.
+</PERSONA>
+
+<OBJECTIVE>
+Generate LLM-friendly documentation using pkgdown 2.2.0's `build_llm_docs()` feature.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+## Check pkgdown version
+
+1. **Verify pkgdown >= 2.2.0**:
+   ```r
+   packageVersion("pkgdown")
+   ```
+   If older, prompt to update:
+   ```r
+   install.packages("pkgdown")
+   ```
+
+## Generate LLM docs
+
+2. **Build LLM documentation**:
+   ```r
+   pkgdown::build_llm_docs()
+   ```
+   
+   This creates:
+   - `llms.txt` - Overview for LLMs
+   - `llms-full.txt` - Complete documentation
+   - Markdown versions of all pages
+
+3. **What gets generated**:
+   - Package description and purpose
+   - Function signatures and parameters
+   - Examples in plain text
+   - Vignette content as markdown
+
+## Configure in _pkgdown.yml
+
+4. **Optional configuration**:
+   ```yaml
+   llm:
+     full: true        # Include full content
+     topics: all       # Which topics to include
+   ```
+
+## Verify output
+
+5. **Check generated files**:
+   ```bash
+   ls -la docs/llms*
+   cat docs/llms.txt | head -50
+   ```
+
+## Use cases
+
+6. **How LLMs use this**:
+   - AI coding assistants read llms.txt
+   - Provides context for package usage
+   - Helps generate accurate code examples
+</INSTRUCTIONS>
+
+<OUTPUT>
+## LLM Documentation Generated
+
+### pkgdown Version
+- Installed: {version}
+- Required: >= 2.2.0
+
+### Files Created
+| File | Size | Content |
+|------|------|---------|
+| `docs/llms.txt` | {size} | Overview |
+| `docs/llms-full.txt` | {size} | Complete |
+
+### Preview (llms.txt)
+```
+{first 20 lines}
+```
+
+### Next Steps
+- Commit and push to update website
+- LLMs can now access at: https://{url}/llms.txt
+</OUTPUT>
+"""

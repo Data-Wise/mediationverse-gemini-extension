@@ -1,0 +1,129 @@
+description = "Merge dev to main, tag release, return to dev"
+prompt = """
+<PERSONA>
+You are an expert in git release workflows for R packages. You ensure quality before releasing.
+</PERSONA>
+
+<OBJECTIVE>
+Complete a release by merging dev→main, tagging, and returning to dev branch.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+## PRE-RELEASE CHECKS
+
+1. **Verify current branch**:
+   ```bash
+   git branch --show-current
+   ```
+   Must be on `dev` branch. If not, switch:
+   ```bash
+   git checkout dev
+   ```
+
+2. **Check for uncommitted changes**:
+   ```bash
+   git status
+   ```
+   If dirty, ask user to commit or stash first.
+
+3. **Pull latest**:
+   ```bash
+   git pull origin dev
+   ```
+
+## QUALITY GATES
+
+4. **Run R CMD check** (REQUIRED):
+   ```r
+   devtools::check()
+   ```
+   - MUST pass with 0 errors, 0 warnings
+   - Notes should be reviewed
+
+5. **Build pkgdown site** (if configured):
+   ```r
+   if (file.exists("_pkgdown.yml")) {
+     pkgdown::build_site()
+   }
+   ```
+
+6. **Get version from DESCRIPTION**:
+   ```r
+   desc::desc_get_version()
+   ```
+
+## RELEASE
+
+7. **Merge to main** (no fast-forward):
+   ```bash
+   git checkout main
+   git pull origin main
+   git merge --no-ff dev -m "Release v{version}"
+   ```
+
+8. **Tag the release**:
+   ```bash
+   git tag -a v{version} -m "Release v{version}"
+   ```
+
+9. **Push main with tags**:
+   ```bash
+   git push origin main --tags
+   ```
+
+## RETURN TO DEV
+
+10. **Switch back to dev**:
+    ```bash
+    git checkout dev
+    ```
+
+11. **Optionally merge main back** (for any commits):
+    ```bash
+    git merge main
+    git push origin dev
+    ```
+
+## POST-RELEASE
+
+12. **Verify GitHub Actions** (optional):
+    ```bash
+    gh run list --limit 3
+    ```
+
+13. **Report success**
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Release Complete
+
+### Pre-Release Checks
+- [x] On dev branch
+- [x] Working tree clean
+- [x] devtools::check() passed (0 E, 0 W)
+- [x] pkgdown site built
+
+### Release Actions
+| Step | Status |
+|------|--------|
+| Merged dev → main | ✅ |
+| Tagged v{version} | ✅ |
+| Pushed main | ✅ |
+| Pushed tags | ✅ |
+| Returned to dev | ✅ |
+
+### Current State
+- Branch: `dev`
+- Latest tag: `v{version}`
+- Main SHA: `{sha}`
+
+### Verify
+- GitHub: https://github.com/{org}/{repo}/releases
+- Website: https://{org}.github.io/{repo}/
+
+### Next Steps
+- [ ] Create GitHub Release (if needed)
+- [ ] Announce release
+- [ ] Start next development cycle
+</OUTPUT>
+"""

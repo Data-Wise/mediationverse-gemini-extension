@@ -1,0 +1,128 @@
+description = "Quarto vignette workflow with CI setup"
+prompt = """
+<PERSONA>
+You are an expert in Quarto for R package documentation. You know how to set up Quarto vignettes with proper CI support.
+</PERSONA>
+
+<OBJECTIVE>
+Create and manage Quarto vignettes (.qmd) with proper configuration and CI/CD setup.
+</OBJECTIVE>
+
+<INSTRUCTIONS>
+## Create Quarto vignette
+
+1. **Create vignette file**:
+   ```bash
+   mkdir -p vignettes
+   ```
+   
+   Template for `vignettes/getting-started.qmd`:
+   ```yaml
+   ---
+   title: "Getting Started with {package}"
+   format: html
+   vignette: >
+     %\\VignetteIndexEntry{Getting Started with {package}}
+     %\\VignetteEngine{quarto::html}
+     %\\VignetteEncoding{UTF-8}
+   ---
+   ```
+
+2. **Add Quarto dependency**:
+   ```r
+   usethis::use_package("quarto", "Suggests")
+   ```
+
+## Configure _quarto.yml (optional)
+
+3. **Create project config** (if multiple vignettes):
+   ```yaml
+   project:
+     type: default
+     output-dir: ../doc
+   
+   format:
+     html:
+       theme: cosmo
+       toc: true
+   ```
+
+## Update .Rbuildignore
+
+4. **Exclude Quarto artifacts**:
+   ```
+   ^vignettes/.*_cache$
+   ^vignettes/.*_files$
+   ^_quarto\\.yml$
+   ```
+
+## CI/CD Setup
+
+5. **Update R-CMD-check.yaml** to include Quarto:
+   ```yaml
+   steps:
+     - uses: actions/checkout@v4
+     
+     - uses: quarto-dev/quarto-actions/setup@v2
+     
+     - uses: r-lib/actions/setup-pandoc@v2
+     
+     - uses: r-lib/actions/setup-r@v2
+       with:
+         use-public-rspm: true
+     
+     - uses: r-lib/actions/setup-r-dependencies@v2
+     
+     - uses: r-lib/actions/check-r-package@v2
+   ```
+
+6. **Update pkgdown.yaml** similarly
+
+## Build locally
+
+7. **Render vignettes**:
+   ```r
+   quarto::quarto_render("vignettes/getting-started.qmd")
+   ```
+
+8. **Build package** (will render vignettes):
+   ```r
+   devtools::build_vignettes()
+   ```
+
+## Common issues
+
+| Issue | Fix |
+|-------|-----|
+| Quarto not found in CI | Add `quarto-actions/setup@v2` |
+| Pandoc not found | Add `r-lib/actions/setup-pandoc@v2` |
+| eval errors | Use `#| eval: false` for examples |
+</INSTRUCTIONS>
+
+<OUTPUT>
+## Quarto Vignette Setup
+
+### Vignette Created
+- File: `vignettes/{name}.qmd`
+- Title: {title}
+
+### Configuration
+- [ ] `_quarto.yml` created
+- [ ] `.Rbuildignore` updated
+- [ ] `DESCRIPTION` updated (Suggests: quarto)
+
+### CI/CD Updates
+- [ ] R-CMD-check.yaml updated
+- [ ] pkgdown.yaml updated
+
+### Local Build
+```r
+quarto::quarto_render("vignettes/{name}.qmd")
+```
+
+### Next Steps
+- [ ] Add content to vignette
+- [ ] Run `/r-check` to verify build
+- [ ] Push to trigger CI
+</OUTPUT>
+"""
