@@ -11,6 +11,8 @@ A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extens
 gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-extension
 ```
 
+**New?** See the [Getting Started Guide](GETTING_STARTED.md) for a tutorial.
+
 ## Orchestration Patterns
 
 | Pattern | Trigger | Behavior |
