@@ -1,28 +1,42 @@
 # Mediationverse Extension
 
-The mediationverse extension provides specialized commands for R package development, focusing on mediation analysis packages.
+The **mediationverse** extension provides a comprehensive suite of tools for R package development, combining general best practices with specialized support for mediation analysis.
 
-## Available Commands
+## Core Workflows
 
-### Development Workflow
+### 🚀 Setup & Planning
 
-- `/r-check` - Run R CMD check with CRAN best practices
-- `/r-document` - Generate roxygen2 documentation
-- `/r-test` - Run testthat tests
-- `/r-build` - Full build cycle for CRAN submission
+- `/r-init` - Initialize new package
+- `/r-onboard` - Analyze existing package
+- `/r-resume` - Resume work
+- `/r-save` - Save progress
 
-### Documentation
+### 🛠️ Development
 
-- `/document-function` - Generate roxygen2 headers
-- `/format-quarto-math` - Format math for Quarto/RMarkdown
-- `/find-bibtex` - Find BibTeX citations for mediation papers
+- `/r-check` - Run `devtools::check()` (CRAN standards)
+- `/r-test` - Run `devtools::test()`
+- `/r-docs` - Run `devtools::document()`
+- `/r-s7` - S7 object-oriented programming
+- `/r-fix` - Auto-fix common issues
 
-### Code Quality
+### 📝 Documentation
 
-- `/review-and-teach` - CRAN maintainer-style code review
-- `/explain-simply` - Explain statistical concepts simply
-- `/generate-test-with-comments` - Generate testthat blocks with comments
-- `/validate-inputs` - Refactor to use checkmate validation
-- `/finalize-task` - Summarize session and generate git commit message
+- `/r-pkgdown` - Build website
+- `/r-readme` - Generate README
+- `/document-function` - Detailed roxygen2 headers
+- `/format-quarto-math` - Format math for vignettes
+- `/find-bibtex` - Find mediation citations
 
-When working on RMediation or mediationverse packages, prefer these commands for consistent workflow.
+### 🔍 Quality & Review
+
+- `/r-lint` - Tidyverse linting
+- `/review-and-teach` - CRAN maintainer-style review
+- `/validate-inputs` - Refactor to use `checkmate`
+- `/finalize-task` - Generate commit messages
+
+## Best Practices
+
+- **Validation**: Use `checkmate` for defensive programming
+- **Testing**: Use `testthat` (edition 3)
+- **Documentation**: Use `roxygen2` and Quarto vignettes
+- **Style**: Follow tidyverse style guide

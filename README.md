@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Extension-purple)](https://github.com/google-gemini/gemini-cli)
 
-A [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R package development workflows, optimized for the **mediationverse** ecosystem of mediation analysis packages.
+A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R package development, combining general best practices with specialized tools for the **mediationverse** ecosystem.
 
 ## Installation
 
@@ -11,76 +11,89 @@ A [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R pack
 gemini extensions install https://github.com/Data-Wise/mediationverse-gemini-extension
 ```
 
-> **Requires** Gemini CLI v0.4.0 or newer. See [installation instructions](https://github.com/google-gemini/gemini-cli#-installation).
-
 ## Commands
 
-### Development Workflow
+### 🚀 Setup & Planning
 
 | Command | Description |
 |---------|-------------|
-| `/r-check` | Run `R CMD check --as-cran` with best practices |
-| `/r-document` | Generate roxygen2 documentation |
-| `/r-test` | Run testthat tests |
-| `/r-build` | Full CRAN submission workflow |
+| `/r-init` | Initialize a new package with development plan |
+| `/r-onboard` | Analyze and onboard an existing package |
+| `/r-resume` | Resume work from previous session logs |
+| `/r-save` | Save progress and update planning docs |
+| `/r-learn` | Update knowledge base |
+| `/r-usethis` | Run `usethis` setup commands |
+| `/r-git` | Manage Git branches and status |
 
-### Documentation
+### 🛠️ Development Workflow
 
 | Command | Description |
 |---------|-------------|
-| `/document-function` | Generate complete roxygen2 headers |
-| `/format-quarto-math` | Format LaTeX math for Quarto/RMarkdown vignettes |
+| `/r-check` | Run `devtools::check()` with CRAN settings |
+| `/r-test` | Run `devtools::test()` |
+| `/r-build` | Full CRAN submission build workflow |
+| `/r-docs` | Run `devtools::document()` |
+| `/r-document` | Generate roxygen2 documentation (alias) |
+| `/r-s7` | Create S7 classes and methods |
+| `/r-fix` | Auto-fix common R CMD check issues |
+
+### 📝 Documentation & Website
+
+| Command | Description |
+|---------|-------------|
+| `/r-readme` | Generate README with badges |
+| `/r-news` | Create/update NEWS.md |
+| `/r-pkgdown` | Build pkgdown website |
+| `/r-actions` | Setup GitHub Actions |
+| `/r-ci` | Check CI workflow status |
+| `/document-function` | Generate detailed roxygen2 headers |
+| `/format-quarto-math` | Format math for Quarto/RMarkdown |
 | `/find-bibtex` | Find BibTeX citations for mediation papers |
 
-### Code Quality & Review
+### 🔍 Code Quality & Review
 
 | Command | Description |
 |---------|-------------|
-| `/review-and-teach` | CRAN maintainer-style code review with teaching |
+| `/r-lint` | Lint code with tidyverse style |
+| `/r-review` | General code review |
+| `/review-and-teach` | CRAN maintainer-style review with teaching |
+| `/validate-inputs` | Refactor to use `checkmate` validation |
+| `/finalize-task` | Summarize session and generate commit message |
+
+### 🎓 Teaching & Explanation
+
+| Command | Description |
+|---------|-------------|
 | `/explain-simply` | Explain statistical concepts simply |
-| `/generate-test-with-comments` | Generate annotated testthat test blocks |
-| `/validate-inputs` | Refactor to use checkmate input validation |
-| `/finalize-task` | Summarize session and generate git commit message |
+| `/generate-test-with-comments` | Generate annotated testthat blocks |
 
 ## Usage Examples
 
-### Check your package for CRAN
+### Start a new feature
+
+```
+/r-git create a new branch for feature-x
+```
+
+### Check your package
 
 ```
 /r-check
 ```
 
-### Generate documentation for a function
+### Find a citation
 
 ```
-/document-function
-```
-
-Then select or paste the function you want documented.
-
-### Get a simple explanation
-
-```
-/explain-simply what is the distribution of product method?
+/find-bibtex MacKinnon 2004 confidence limits
 ```
 
 ## Related Packages
 
-This extension is designed for the mediationverse ecosystem:
-
-- [RMediation](https://github.com/Data-Wise/RMediation) - Confidence intervals for mediation effects
-- [medfit](https://github.com/Data-Wise/medfit) - Model fitting for mediation
-- [probmed](https://github.com/Data-Wise/probmed) - Probability of mediation
-- [medsim](https://github.com/Data-Wise/medsim) - Simulation for mediation studies
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
+- [RMediation](https://github.com/Data-Wise/RMediation)
+- [medfit](https://github.com/Data-Wise/medfit)
+- [probmed](https://github.com/Data-Wise/probmed)
+- [medsim](https://github.com/Data-Wise/medsim)
 
 ## License
 
 [Apache License 2.0](LICENSE)
-
-## Author
-
-Davood Tofighi, PhD

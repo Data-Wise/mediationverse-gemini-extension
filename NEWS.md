@@ -9,19 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of mediationverse Gemini CLI extension
-- **Development commands**:
-  - `/r-check` - Run R CMD check with CRAN best practices
-  - `/r-document` - Generate roxygen2 documentation
-  - `/r-test` - Run testthat tests
-  - `/r-build` - Full CRAN submission workflow
-- **Documentation commands**:
-  - `/document-function` - Generate roxygen2 headers
-  - `/format-quarto-math` - Format LaTeX for Quarto/RMarkdown
-  - `/find-bibtex` - Find BibTeX citations for mediation papers
-- **Code quality commands**:
-  - `/review-and-teach` - CRAN maintainer-style review with teaching
-  - `/explain-simply` - Simple statistical explanations
-  - `/generate-test-with-comments` - Generate annotated testthat blocks
-  - `/validate-inputs` - Refactor to use checkmate validation
-  - `/finalize-task` - Summarize session and generate git commit message
+- **Merged commands from r-package-dev-gemini**:
+  - Setup: `/r-init`, `/r-onboard`, `/r-resume`, `/r-save`, `/r-learn`, `/r-usethis`, `/r-git`
+  - Development: `/r-s7`, `/r-fix`, `/r-lint`, `/r-docs`
+  - Documentation: `/r-readme`, `/r-news`, `/r-pkgdown`, `/r-actions`, `/r-ci`
+- **Mediationverse specific commands**:
+  - `/document-function`, `/format-quarto-math`, `/find-bibtex`
+  - `/review-and-teach`, `/explain-simply`, `/generate-test-with-comments`
+  - `/validate-inputs`, `/finalize-task`
