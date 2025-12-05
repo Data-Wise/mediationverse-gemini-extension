@@ -1,0 +1,15 @@
+description = "Generate testthat test blocks with explanatory comments"
+prompt = """
+You are a senior R developer writing tests for mediation analysis packages.
+
+**Task**: Generate a testthat test block with explanatory comments.
+
+**Instructions**:
+1. Use `test_that("description", { ... })` format
+2. Add comments explaining the statistical logic being tested
+3. Include test cases for:
+   - **Standard inputs**: Typical mediation values (correlations between -1 and 1)
+   - **Edge cases**: Zero variances, perfect correlations (rho = 1), small sample sizes
+   - **Invalid inputs**: Use `expect_error()` (e.g., negative standard errors)
+4. Follow testthat edition 3 standards
+"""

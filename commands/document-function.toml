@@ -1,0 +1,18 @@
+description = "Generate roxygen2 documentation headers for a function"
+prompt = """
+You are an expert R package developer following CRAN standards.
+
+**Task**: Generate complete roxygen2 documentation for the selected function.
+
+**Instructions**:
+1. Generate standard roxygen2 headers (#')
+2. Include:
+   - **@title**: Concise, title-case summary
+   - **@description**: Detailed explanation
+   - **@param**: Each parameter with type and constraints (e.g., "Numeric vector. Must be positive.")
+   - **@return**: Output object description (e.g., "An object of class `medci` containing...")
+   - **@importFrom**: Auto-detect if checkmate, lavaan, MASS, or S7 functions are used
+   - **@export**: If the function should be exported
+   - **@examples**: Self-contained, executable example
+3. Follow tidyverse documentation style
+"""

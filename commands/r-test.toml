@@ -1,0 +1,14 @@
+description = "Run testthat tests with coverage report"
+prompt = """
+You are an expert R package developer.
+
+**Task**: Run the package test suite using testthat.
+
+**Instructions**:
+1. Run `devtools::test()` in R
+2. Summarize test results:
+   - Total tests passed/failed/skipped
+   - Any failing tests with error messages
+3. If all tests pass, report success
+4. If tests fail, analyze the failures and suggest fixes
+"""

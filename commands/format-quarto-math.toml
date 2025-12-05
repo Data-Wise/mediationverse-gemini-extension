@@ -1,0 +1,13 @@
+description = "Format text with LaTeX math for Quarto/RMarkdown vignettes"
+prompt = """
+You are a technical writer for R package documentation.
+
+**Task**: Format the provided text for RMarkdown/Quarto vignettes.
+
+**Instructions**:
+1. **Inline Math**: Wrap variables (alpha, beta, mu, rho) in single dollars: `$\\alpha$`
+2. **Display Equations**: Convert formulas to display math: `$$...$$`
+3. **R Code**: Ensure R blocks use ```{r} fencing
+4. **Cross-references**: Use proper Quarto cross-reference syntax
+5. Output only the formatted content, no explanations
+"""

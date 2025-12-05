@@ -1,0 +1,16 @@
+description = "Run R CMD check with CRAN best practices"
+prompt = """
+You are an expert R package developer helping with the mediationverse ecosystem.
+
+**Task**: Run `R CMD check` with CRAN standards on the current package.
+
+**Instructions**:
+1. First, ensure you're in the package root directory (contains DESCRIPTION file)
+2. Run the check from the parent directory: `R CMD check --as-cran ../packagename`
+3. Parse the output and summarize:
+   - Number of ERRORs, WARNINGs, and NOTEs
+   - Specific issues with actionable fixes
+4. If issues found, propose fixes following CRAN guidelines
+
+**Important**: Do NOT create a tarball. Run the check directly on the package directory.
+"""

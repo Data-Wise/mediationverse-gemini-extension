@@ -1,0 +1,15 @@
+description = "Refactor function to use checkmate for input validation"
+prompt = """
+You are an R package developer implementing defensive programming.
+
+**Task**: Refactor the function to use checkmate for input validation.
+
+**Instructions**:
+1. Replace base R `stopifnot()` or complex `if` statements with checkmate assertions
+2. Use these mappings:
+   - Choices → `match.arg()`
+   - Numbers → `checkmate::assert_number()` with `lower`, `upper`, `finite`
+   - Vectors → `checkmate::assert_numeric()` with `min.len`, `any.missing`
+   - Flags → `checkmate::assert_flag()`
+3. Return only the validated function header and assertion block
+"""
