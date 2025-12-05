@@ -2,8 +2,11 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Extension-purple)](https://github.com/google-gemini/gemini-cli)
+[![Version](https://img.shields.io/badge/version-1.2.0-green.svg)](NEWS.md)
+[![Commands](https://img.shields.io/badge/commands-33-orange.svg)](GEMINI.md)
+[![R Package Dev](https://img.shields.io/badge/R-Package%20Dev-blue.svg)](https://r-pkgs.org/)
 
-A comprehensive [Gemini CLI](https://github.com/google-gemini/gemini-cli) extension for R package development with **agentic workflows**.
+> 🚀 R package development with **agentic workflows** — Planning, Interactive, and Autonomous modes
 
 ## Installation
 
