@@ -1,4 +1,4 @@
 {
-  "source": "local",
-  "type": "local"
+  "source": "https://github.com/Data-Wise/mediationverse-gemini-extension",
+  "type": "git"
 }
